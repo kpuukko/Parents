@@ -1,0 +1,24 @@
+TITLE: Katin toka LPA
+DATA: FILE = "parent_mplus2.dat";
+VARIABLE: 
+NAMES = ena1 ena2 ena3 ena4 ena5 res1 res2 res3 mon1 mon2 mon3 tech1 tech2 rev1
+     skill1 skill2 skill3 skill4 skill5 skill6 skill7 skill8 skill9 skill10 skill11
+     esm1 esm2 esm3 egm1 egm2 egm3 role ori1 ori2 lang1 lang2 lang3 lang4 lang5
+     lang6 lang7 lang8 Edu Curac_1 Curac_2 Curac_3 Curac_4 Curac_5 Curac_6 Curac_7
+     Curac_8 jobrole Fam_1 Fam_2 Fam_3 Fam_4 Fam_5 Fam_6 Fam_7 Fam_8 parent1 parent2
+     parent3 parent4 parent5 q6 q8 Finsitu diffic tech_c; 
+MISSING=.;
+
+USEVARIABLES = ena1 ena2 ena3 ena4 res1 res2 res3 mon1 mon2 mon3 rev1 tech_c;
+
+CLASSES = c(2);
+
+ANALYSIS:
+      TYPE = MIXTURE;
+      ESTIMATOR IS MLR;
+      !STARTS = 100 25;
+      OPTSEED = 467339;
+      PROCESSORS = 4;
+MODEL:
+
+OUTPUT: TECH11 TECH14;

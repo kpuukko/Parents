@@ -1,0 +1,75 @@
+---
+title: "LPA Modeling"
+author: "Kati Puukko"
+date: "14 1 2021"
+output: html_document
+---
+
+## Libraries
+
+```{r message=FALSE, warning=FALSE}
+
+library(dplyr) 
+library(tidyverse)
+library(foreign)
+library(data.table)
+library(magrittr)
+library(ggplot2)
+library(data.table)
+library(MplusAutomation)
+
+setwd('C:/LocalData/kpuukko/Parents_2021/LPA_erikseen')
+
+```
+
+## LPA Modeling
+
+```{r warning=FALSE}
+
+runModels(c("LPA2_1.inp",
+            "LPA2_2.inp",
+            "LPA2_3.inp",
+            "LPA2_4.inp", 
+            "LPA2_5.inp",
+            "LPA2_6.inp",
+            "LPA2_7.inp",
+            "LPA2_8.inp",
+            "LPA2_9.inp",
+            "LPA2_10.inp"),showOutput = T)
+
+LPA <- readModels(c("lpa2_1.out",
+                    "lpa2_2_t11_t14.out",
+                    "lpa2_3_t11_t14.out",
+                    "lpa2_4_t11_t14.out", 
+                    "lpa2_5_t11_t14.out",
+                    "lpa2_6_t11_t14.out",
+                    "lpa2_7_t11_t14.out",
+                    "lpa2_8_t11_t14.out",
+                    "lpa2_9.out",
+                    "lpa2_10.out"))
+
+LPAfits <- SummaryTable(LPA, keepCols=c("Filename", "Observations", "Parameters", "LL", "LLCorrectionFactor", "BIC", "aBIC", "AIC", "Entropy", "T11_VLMR_PValue", "BLRT_PValue"), sortBy = "Parameters")
+
+#CAIC = -2*logL + p*(log(n) + 1).
+LPAfits$'CAIC' <- -2*LPAfits$LL + LPAfits$Parameters*(log(LPAfits$Observations)+1)
+
+#SACAIC N*= (N+2)/24
+LPAfits$'aCAIC' <- -2*LPAfits$LL + LPAfits$Parameters*(log((LPAfits$Observations)/24)+1)
+
+```
+Lue 4 profiilin data R:ssä
+
+
+```{r}
+
+pdata <- readModels("lpa2_4_t11_t14.out")$savedata
+
+# Check data #
+glimpse(pdata)
+summary(pdata)
+str(pdata)
+head(pdata)
+
+```
+
+

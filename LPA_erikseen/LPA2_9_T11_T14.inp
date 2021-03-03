@@ -1,0 +1,27 @@
+TITLE: Katin eka LPA
+DATA: FILE = "mplus.dat";
+
+VARIABLE: 
+NAMES = gender age post do oedu medu living someuse 
+        ffina ofina emo1 emo2 emo3 cog1 cog2 cog3 
+        agency1 agency2 agency3 over1 over2 over3 
+        fomo1 fomo2 fomo3 game chat scrol info content 
+        shop blog market mot1 mot2 mot3 mot4;
+
+MISSING=.;
+
+USEVARIABLES = agency1 agency2 agency3 over1 over2 over3 mot1 mot2 mot3 mot4;
+
+CLASSES = c(9);
+
+
+ANALYSIS:
+    TYPE = MIXTURE;
+    ESTIMATOR IS MLR;
+    !STARTS = 100 25;
+    OPTSEED = 192071;
+    PROCESSORS = 4;
+
+MODEL:
+
+OUTPUT: TECH11 TECH14;

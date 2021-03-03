@@ -1,0 +1,34 @@
+TITLE: Katin toka LPA
+DATA: FILE = "merged_mplus3.dat";
+
+VARIABLE: 
+NAMES = ena1 ena2 ena3 ena4 ena5 res1 res2 res3 mon1 mon2 mon3 tech1 tech2 rev1
+     skill1 skill2 skill3 skill4 skill5 skill6 skill7 skill8 skill9 skill10 skill11
+     esm1 esm2 esm3 egm1 egm2 egm3 role ori1 ori2 lang1 lang2 lang3 lang4 lang5
+     lang6 lang7 lang8 Edu Curac_1 Curac_2 Curac_3 Curac_4 Curac_5 Curac_6 Curac_7
+     Curac_8 jobrole Fam_1 Fam_2 Fam_3 Fam_4 Fam_5 Fam_6 Fam_7 Fam_8 parent1 parent2
+     parent3 parent4 parent5 q6 q8 cnumb Finsitu diffic ID Duplicate_IDs toimi
+     dumrol cclass mother father mmot ffat bcount Eclass Edum kuusi kasi cage yh mh
+     uh pclass2 tech_c ena_c mon_c res_c pvol_c digi_c exc_c OGender P_Q1 P_Q2 adig1
+     adig3 adig4 adig7 adig8 adig11 adig12 adig13 adig14 adig16 adig17 adig18 adig19
+     bdig3 bdig5 bdig6 bdig8 bdig10 bdig12 bdig13 bdig14 bdig15 bdig16 bdig17 bdig18
+     bdig19 cdig1 cdig2 cdig3 cdig7 cdig8 cdig9 cdig10 cdig11 cdig13 cdig16 cdig17
+     cdig18 cdig19 conlea1 conlea2 conlea3 conlea4 conlea5 conlea6 negadigi1
+     negadigi2 negadigi3 negadigi4 negadigi5 Ofina MGender oeiu; 
+MISSING=.;
+
+USEVARIABLES = ena1 ena2 ena3 ena4 res1 res2 res3 mon1 mon2 mon3 rev1 tech_c;
+
+AUXILIARY = (DCAT) dumrol Edum toimi bcount Fam_1 Fam_2 Fam_6 cage MGender;
+
+CLASSES = c(4);
+
+ANALYSIS:
+      TYPE = MIXTURE;
+      ESTIMATOR IS MLR;
+      !STARTS = 100 25;
+      OPTSEED = 352277;
+      PROCESSORS = 4;
+MODEL:
+
+OUTPUT: TECH11 TECH14;
