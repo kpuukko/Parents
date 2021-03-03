@@ -1,0 +1,727 @@
+Mplus VERSION 8.5
+MUTHEN & MUTHEN
+02/24/2021   3:08 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Katin toka LPA
+  DATA: FILE = "parent_mplus2.dat";
+  VARIABLE:
+  NAMES = ena1 ena2 ena3 ena4 ena5 res1 res2 res3
+  mon1 mon2 mon3 tech1 tech2 rev1 skill1 skill2
+  skill3 skill4 skill5 skill6 skill7 skill8 skill9 skill10
+  skill11 esm1 esm2 esm3 egm1 egm2 egm3 role ori1 ori2
+  lang1 lang2 lang3 lang4 lang5 lang6 lang7 lang8
+  Edu Curac_1 Curac_2 Curac_3 Curac_4 Curac_5 Curac_6 Curac_7 Curac_8
+  jobrole Fam_1 Fam_2 Fam_3 Fam_4 Fam_5 Fam_6 Fam_7 Fam_8
+  parent1 parent2 parent3 parent4 parent5 q6 q8 cnumb
+  Finsitu diffic ID Duplicate_IDs toimi dumrol cclass parent bcount Eclass
+  Edum yh mh uh pclass2 mother father tech_c ena_c mon_c res_c pvol_c;
+  MISSING=.;
+
+  USEVARIABLES = ena1 ena2 ena3 ena4 res1 res2 res3 mon1 mon2 mon3 rev1 tech_c;
+
+  AUXILIARY = (DCAT) dumrol Edum toimi bcount Fam_1 Fam_2 Fam_6;
+
+  CLASSES = c(4);
+
+  ANALYSIS:
+        TYPE = MIXTURE;
+        ESTIMATOR IS MLR;
+        !STARTS = 100 25;
+        OPTSEED = 352277;
+        PROCESSORS = 4;
+  MODEL:
+
+  OUTPUT: TECH11 TECH14;
+
+
+
+*** WARNING in MODEL command
+  All variables are uncorrelated with all other variables within class.
+  Check that this is what is intended.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Katin toka LPA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        1392
+
+Number of dependent variables                                   12
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   ENA1        ENA2        ENA3        ENA4        RES1        RES2
+   RES3        MON1        MON2        MON3        REV1        TECH_C
+
+Observed auxiliary variables
+   DUMROL      EDUM        TOIMI       BCOUNT      FAM_1       FAM_2
+   FAM_6
+
+Categorical latent variables
+   C
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Random seed for analysis                                  352277
+
+Input data file(s)
+  parent_mplus2.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            18
+     Number of y missing data patterns          18
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1           0.958
+ ENA2           0.956         0.958
+ ENA3           0.955         0.955         0.956
+ ENA4           0.954         0.953         0.954         0.955
+ RES1           0.955         0.954         0.953         0.952         0.956
+ RES2           0.955         0.953         0.953         0.953         0.955
+ RES3           0.954         0.953         0.953         0.953         0.954
+ MON1           0.953         0.952         0.953         0.952         0.953
+ MON2           0.953         0.953         0.953         0.952         0.953
+ MON3           0.926         0.926         0.926         0.925         0.926
+ REV1           0.955         0.954         0.953         0.951         0.955
+ TECH_C         0.958         0.958         0.956         0.955         0.956
+
+
+           Covariance Coverage
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2           0.955
+ RES3           0.954         0.955
+ MON1           0.953         0.953         0.953
+ MON2           0.953         0.954         0.953         0.954
+ MON3           0.926         0.927         0.925         0.926         0.927
+ REV1           0.954         0.953         0.952         0.953         0.925
+ TECH_C         0.955         0.955         0.953         0.954         0.927
+
+
+           Covariance Coverage
+              REV1          TECH_C
+              ________      ________
+ REV1           0.958
+ TECH_C         0.958         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     ENA1                  3.111       0.099       1.000    2.25%       3.000      3.000      3.000
+            1334.000       0.637       0.514       5.000    4.80%       3.000      4.000
+     ENA2                  3.518       0.144       1.000    0.15%       3.000      3.000      3.000
+            1333.000       0.496      -0.114       5.000    7.50%       4.000      4.000
+     ENA3                  3.361       0.048       1.000    0.83%       3.000      3.000      3.000
+            1331.000       0.642      -0.022       5.000    7.59%       4.000      4.000
+     ENA4                  3.455      -0.016       1.000    1.13%       3.000      3.000      3.000
+            1329.000       0.802      -0.346       5.000   13.17%       4.000      4.000
+     RES1                  3.394      -0.179       1.000    3.08%       3.000      3.000      3.000
+            1331.000       1.025      -0.505       5.000   14.65%       4.000      4.000
+     RES2                  3.132       0.134       1.000    3.98%       2.000      3.000      3.000
+            1330.000       0.958      -0.259       5.000   10.23%       3.000      4.000
+     RES3                  3.387      -0.157       1.000    4.44%       2.000      3.000      3.000
+            1329.000       1.191      -0.654       5.000   18.59%       4.000      4.000
+     MON1                  2.751       0.058       1.000   11.30%       2.000      3.000      3.000
+            1327.000       0.959      -0.208       5.000    4.14%       3.000      3.000
+     MON2                  1.692       1.158       1.000   52.41%       1.000      1.000      1.000
+            1328.000       0.736       1.060       5.000    0.98%       2.000      2.000
+     MON3                  2.102       0.548       1.000   34.88%       1.000      2.000      2.000
+            1290.000       1.008      -0.361       5.000    1.78%       2.000      3.000
+     REV1                  1.876       0.895       1.000   32.11%       1.000      2.000      2.000
+            1333.000       0.593       1.427       6.000    0.08%       2.000      2.000
+     TECH_C                1.766      -1.241       0.000   13.58%       2.000      2.000      2.000
+            1392.000       0.618       1.015       3.000    8.33%       2.000      2.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       63
+
+Loglikelihood
+
+          H0 Value                      -18964.355
+          H0 Scaling Correction Factor      1.2242
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   38054.709
+          Bayesian (BIC)                 38384.734
+          Sample-Size Adjusted BIC       38184.608
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        388.48150          0.27908
+       2        218.51471          0.15698
+       3        394.89304          0.28369
+       4        390.11075          0.28025
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        388.48150          0.27908
+       2        218.51471          0.15698
+       3        394.89304          0.28369
+       4        390.11075          0.28025
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              377          0.27083
+       2              207          0.14871
+       3              422          0.30316
+       4              386          0.27730
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.750
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.914    0.000    0.063    0.023
+    2   0.000    0.894    0.060    0.046
+    3   0.082    0.046    0.778    0.094
+    4   0.024    0.037    0.079    0.860
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3        4
+
+    1   0.887    0.000    0.089    0.024
+    2   0.000    0.846    0.089    0.065
+    3   0.060    0.032    0.831    0.077
+    4   0.022    0.024    0.102    0.851
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3        4
+
+    1      3.609   -6.261    1.312    0.000
+    2    -11.076    2.573    0.320    0.000
+    3     -0.249   -0.893    2.376    0.000
+    4     -3.640   -3.550   -2.122    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    ENA1               2.613      0.048     54.474      0.000
+    ENA2               3.050      0.039     78.910      0.000
+    ENA3               3.135      0.048     64.653      0.000
+    ENA4               2.959      0.053     56.093      0.000
+    RES1               2.436      0.063     38.916      0.000
+    RES2               2.340      0.054     43.543      0.000
+    RES3               2.413      0.064     37.820      0.000
+    MON1               1.912      0.066     28.896      0.000
+    MON2               1.170      0.024     47.919      0.000
+    MON3               1.396      0.055     25.407      0.000
+    REV1               1.813      0.042     42.888      0.000
+    TECH_C             1.815      0.043     42.354      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.348      0.000
+    ENA2               0.333      0.015     22.338      0.000
+    ENA3               0.570      0.024     23.915      0.000
+    ENA4               0.630      0.026     23.837      0.000
+    RES1               0.433      0.029     14.990      0.000
+    RES2               0.621      0.025     24.725      0.000
+    RES3               0.547      0.027     20.070      0.000
+    MON1               0.548      0.024     22.875      0.000
+    MON2               0.514      0.030     17.176      0.000
+    MON3               0.601      0.047     12.913      0.000
+    REV1               0.587      0.030     19.845      0.000
+    TECH_C             0.613      0.029     21.453      0.000
+
+Latent Class 2
+
+ Means
+    ENA1               4.057      0.077     52.606      0.000
+    ENA2               4.306      0.067     64.229      0.000
+    ENA3               3.877      0.085     45.404      0.000
+    ENA4               4.225      0.073     57.746      0.000
+    RES1               4.352      0.086     50.534      0.000
+    RES2               4.030      0.076     53.143      0.000
+    RES3               4.210      0.090     46.952      0.000
+    MON1               3.827      0.093     41.143      0.000
+    MON2               2.593      0.122     21.322      0.000
+    MON3               3.173      0.135     23.572      0.000
+    REV1               1.948      0.066     29.722      0.000
+    TECH_C             1.665      0.083     19.988      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.348      0.000
+    ENA2               0.333      0.015     22.338      0.000
+    ENA3               0.570      0.024     23.915      0.000
+    ENA4               0.630      0.026     23.837      0.000
+    RES1               0.433      0.029     14.990      0.000
+    RES2               0.621      0.025     24.725      0.000
+    RES3               0.547      0.027     20.070      0.000
+    MON1               0.548      0.024     22.875      0.000
+    MON2               0.514      0.030     17.176      0.000
+    MON3               0.601      0.047     12.913      0.000
+    REV1               0.587      0.030     19.845      0.000
+    TECH_C             0.613      0.029     21.453      0.000
+
+Latent Class 3
+
+ Means
+    ENA1               3.202      0.052     62.065      0.000
+    ENA2               3.631      0.052     69.202      0.000
+    ENA3               3.504      0.049     71.134      0.000
+    ENA4               3.628      0.059     61.056      0.000
+    RES1               3.066      0.074     41.505      0.000
+    RES2               3.076      0.068     45.362      0.000
+    RES3               3.001      0.084     35.565      0.000
+    MON1               3.083      0.061     50.786      0.000
+    MON2               1.893      0.082     23.171      0.000
+    MON3               2.577      0.085     30.155      0.000
+    REV1               1.978      0.050     39.286      0.000
+    TECH_C             1.713      0.062     27.444      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.348      0.000
+    ENA2               0.333      0.015     22.338      0.000
+    ENA3               0.570      0.024     23.915      0.000
+    ENA4               0.630      0.026     23.837      0.000
+    RES1               0.433      0.029     14.990      0.000
+    RES2               0.621      0.025     24.725      0.000
+    RES3               0.547      0.027     20.070      0.000
+    MON1               0.548      0.024     22.875      0.000
+    MON2               0.514      0.030     17.176      0.000
+    MON3               0.601      0.047     12.913      0.000
+    REV1               0.587      0.030     19.845      0.000
+    TECH_C             0.613      0.029     21.453      0.000
+
+Latent Class 4
+
+ Means
+    ENA1               2.996      0.059     50.802      0.000
+    ENA2               3.437      0.054     63.535      0.000
+    ENA3               3.159      0.048     65.806      0.000
+    ENA4               3.352      0.066     51.122      0.000
+    RES1               4.151      0.059     70.538      0.000
+    RES2               3.484      0.077     45.523      0.000
+    RES3               4.291      0.063     68.418      0.000
+    MON1               2.667      0.072     36.840      0.000
+    MON2               1.518      0.061     24.720      0.000
+    MON3               1.771      0.083     21.228      0.000
+    REV1               1.799      0.044     41.188      0.000
+    TECH_C             1.827      0.042     43.218      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.348      0.000
+    ENA2               0.333      0.015     22.338      0.000
+    ENA3               0.570      0.024     23.915      0.000
+    ENA4               0.630      0.026     23.837      0.000
+    RES1               0.433      0.029     14.990      0.000
+    RES2               0.621      0.025     24.725      0.000
+    RES3               0.547      0.027     20.070      0.000
+    MON1               0.548      0.024     22.875      0.000
+    MON2               0.514      0.030     17.176      0.000
+    MON3               0.601      0.047     12.913      0.000
+    REV1               0.587      0.030     19.845      0.000
+    TECH_C             0.613      0.029     21.453      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1               -0.004      0.122     -0.034      0.973
+    C#2               -0.580      0.174     -3.329      0.001
+    C#3                0.012      0.133      0.092      0.927
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.461E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+EQUALITY TESTS OF MEANS/PROBABILITIES ACROSS CLASSES
+
+DUMROL
+
+   WARNING:  LISTWISE DELETION IS APPLIED TO THE AUXILIARY VARIABLE IN THE
+   ANALYSIS.  TO AVOID LISTWISE DELETION, DATA IMPUTATION CAN BE USED
+   FOR THE AUXILIARY VARIABLES FOLLOWED BY ANALYSIS WITH TYPE=IMPUTATION.
+   NUMBER OF DELETED OBSERVATIONS FOR THE AUXILIARY VARIABLE:  11
+   NUMBER OF OBSERVATIONS USED FOR THE AUXILIARY VARIABLE:  1381
+
+                          Prob       S.E.  Odds Ratio      S.E.   2.5% C.I.  97.5% C.I.
+
+  Class 1
+    Category 1           0.757      0.024      1.000      0.000      1.000      1.000
+    Category 2           0.243      0.024      1.126      0.231      0.754      1.682
+  Class 2
+    Category 1           0.892      0.027      1.000      0.000      1.000      1.000
+    Category 2           0.108      0.027      0.425      0.138      0.225      0.804
+  Class 3
+    Category 1           0.842      0.027      1.000      0.000      1.000      1.000
+    Category 2           0.158      0.027      0.658      0.177      0.388      1.116
+  Class 4
+    Category 1           0.778      0.025      1.000      0.000      1.000      1.000
+    Category 2           0.222      0.025      1.000      0.000      1.000      1.000
+
+                    Chi-Square     P-Value   Degrees of Freedom
+
+  Overall test          15.751      0.001        3
+  Class 1 vs. 2         13.443      0.000        1
+  Class 1 vs. 3          4.565      0.033        1
+  Class 1 vs. 4          0.337      0.562        1
+  Class 2 vs. 3          1.582      0.208        1
+  Class 2 vs. 4          8.884      0.003        1
+  Class 3 vs. 4          2.553      0.110        1
+
+EDUM
+
+   WARNING:  LISTWISE DELETION IS APPLIED TO THE AUXILIARY VARIABLE IN THE
+   ANALYSIS.  TO AVOID LISTWISE DELETION, DATA IMPUTATION CAN BE USED
+   FOR THE AUXILIARY VARIABLES FOLLOWED BY ANALYSIS WITH TYPE=IMPUTATION.
+   NUMBER OF DELETED OBSERVATIONS FOR THE AUXILIARY VARIABLE:  1
+   NUMBER OF OBSERVATIONS USED FOR THE AUXILIARY VARIABLE:  1391
+
+                          Prob       S.E.  Odds Ratio      S.E.   2.5% C.I.  97.5% C.I.
+
+  Class 1
+    Category 1           0.760      0.024      1.000      0.000      1.000      1.000
+    Category 2           0.240      0.024      1.118      0.229      0.749      1.670
+  Class 2
+    Category 1           0.893      0.027      1.000      0.000      1.000      1.000
+    Category 2           0.107      0.027      0.423      0.136      0.226      0.793
+  Class 3
+    Category 1           0.842      0.027      1.000      0.000      1.000      1.000
+    Category 2           0.158      0.027      0.663      0.177      0.393      1.119
+  Class 4
+    Category 1           0.779      0.025      1.000      0.000      1.000      1.000
+    Category 2           0.221      0.025      1.000      0.000      1.000      1.000
+
+                    Chi-Square     P-Value   Degrees of Freedom
+
+  Overall test          16.013      0.001        3
+  Class 1 vs. 2         13.634      0.000        1
+  Class 1 vs. 3          4.340      0.037        1
+  Class 1 vs. 4          0.299      0.584        1
+  Class 2 vs. 3          1.727      0.189        1
+  Class 2 vs. 4          9.176      0.002        1
+  Class 3 vs. 4          2.501      0.114        1
+
+TOIMI
+
+   WARNING:  LISTWISE DELETION IS APPLIED TO THE AUXILIARY VARIABLE IN THE
+   ANALYSIS.  TO AVOID LISTWISE DELETION, DATA IMPUTATION CAN BE USED
+   FOR THE AUXILIARY VARIABLES FOLLOWED BY ANALYSIS WITH TYPE=IMPUTATION.
+   NUMBER OF DELETED OBSERVATIONS FOR THE AUXILIARY VARIABLE:  16
+   NUMBER OF OBSERVATIONS USED FOR THE AUXILIARY VARIABLE:  1376
+
+                          Prob       S.E.  Odds Ratio      S.E.   2.5% C.I.  97.5% C.I.
+
+  Class 1
+    Category 1           0.938      0.013      1.000      0.000      1.000      1.000
+    Category 2           0.021      0.008      0.924      0.547      0.290      2.947
+    Category 3           0.041      0.011      0.549      0.198      0.271      1.112
+  Class 2
+    Category 1           0.830      0.029      1.000      0.000      1.000      1.000
+    Category 2           0.028      0.012      1.422      0.890      0.417      4.848
+    Category 3           0.142      0.027      2.138      0.677      1.149      3.975
+  Class 3
+    Category 1           0.884      0.020      1.000      0.000      1.000      1.000
+    Category 2           0.046      0.012      2.170      1.134      0.779      6.043
+    Category 3           0.071      0.016      0.999      0.358      0.495      2.017
+  Class 4
+    Category 1           0.906      0.017      1.000      0.000      1.000      1.000
+    Category 2           0.022      0.009      1.000      0.000      1.000      1.000
+    Category 3           0.073      0.015      1.000      0.000      1.000      1.000
+
+                    Chi-Square     P-Value   Degrees of Freedom
+
+  Overall test          16.467      0.011        6
+  Class 1 vs. 2         12.408      0.002        2
+  Class 1 vs. 3          4.991      0.082        2
+  Class 1 vs. 4          2.796      0.247        2
+  Class 2 vs. 3          5.548      0.062        2
+  Class 2 vs. 4          5.286      0.071        2
+  Class 3 vs. 4          2.344      0.310        2
+
+BCOUNT
+
+   WARNING:  LISTWISE DELETION IS APPLIED TO THE AUXILIARY VARIABLE IN THE
+   ANALYSIS.  TO AVOID LISTWISE DELETION, DATA IMPUTATION CAN BE USED
+   FOR THE AUXILIARY VARIABLES FOLLOWED BY ANALYSIS WITH TYPE=IMPUTATION.
+   NUMBER OF DELETED OBSERVATIONS FOR THE AUXILIARY VARIABLE:  1
+   NUMBER OF OBSERVATIONS USED FOR THE AUXILIARY VARIABLE:  1391
+
+                          Prob       S.E.  Odds Ratio      S.E.   2.5% C.I.  97.5% C.I.
+
+  Class 1
+    Category 1           0.760      0.024      1.000      0.000      1.000      1.000
+    Category 2           0.240      0.024      1.118      0.229      0.749      1.670
+  Class 2
+    Category 1           0.893      0.027      1.000      0.000      1.000      1.000
+    Category 2           0.107      0.027      0.423      0.136      0.226      0.793
+  Class 3
+    Category 1           0.842      0.027      1.000      0.000      1.000      1.000
+    Category 2           0.158      0.027      0.663      0.177      0.393      1.119
+  Class 4
+    Category 1           0.779      0.025      1.000      0.000      1.000      1.000
+    Category 2           0.221      0.025      1.000      0.000      1.000      1.000
+
+                    Chi-Square     P-Value   Degrees of Freedom
+
+  Overall test          16.013      0.001        3
+  Class 1 vs. 2         13.634      0.000        1
+  Class 1 vs. 3          4.340      0.037        1
+  Class 1 vs. 4          0.299      0.584        1
+  Class 2 vs. 3          1.727      0.189        1
+  Class 2 vs. 4          9.176      0.002        1
+  Class 3 vs. 4          2.501      0.114        1
+
+FAM_1
+                          Prob       S.E.  Odds Ratio      S.E.   2.5% C.I.  97.5% C.I.
+
+  Class 1
+    Category 1           0.973      0.009      1.000      0.000      1.000      1.000
+    Category 2           0.027      0.009      0.601      0.270      0.249      1.449
+  Class 2
+    Category 1           0.904      0.022      1.000      0.000      1.000      1.000
+    Category 2           0.096      0.022      2.301      0.886      1.082      4.896
+  Class 3
+    Category 1           0.943      0.014      1.000      0.000      1.000      1.000
+    Category 2           0.057      0.014      1.301      0.533      0.583      2.902
+  Class 4
+    Category 1           0.956      0.012      1.000      0.000      1.000      1.000
+    Category 2           0.044      0.012      1.000      0.000      1.000      1.000
+
+                    Chi-Square     P-Value   Degrees of Freedom
+
+  Overall test           9.942      0.019        3
+  Class 1 vs. 2          8.541      0.003        1
+  Class 1 vs. 3          2.999      0.083        1
+  Class 1 vs. 4          1.290      0.256        1
+  Class 2 vs. 3          2.266      0.132        1
+  Class 2 vs. 4          4.229      0.040        1
+  Class 3 vs. 4          0.415      0.520        1
+
+FAM_2
+                          Prob       S.E.  Odds Ratio      S.E.   2.5% C.I.  97.5% C.I.
+
+  Class 1
+    Category 1           0.168      0.033      1.000      0.000      1.000      1.000
+    Category 2           0.832      0.033      0.667      0.185      0.387      1.150
+  Class 2
+    Category 1           0.246      0.171      1.000      0.000      1.000      1.000
+    Category 2           0.754      0.171      0.415      0.311      0.095      1.807
+  Class 3
+    Category 1           0.401      0.170      1.000      0.000      1.000      1.000
+    Category 2           0.599      0.170      0.202      0.197      0.030      1.373
+  Class 4
+    Category 1           0.119      0.034      1.000      0.000      1.000      1.000
+    Category 2           0.881      0.034      1.000      0.000      1.000      1.000
+
+                    Chi-Square     P-Value   Degrees of Freedom
+
+  Overall test          18.511      0.000        3
+  Class 1 vs. 2          0.259      0.611        1
+  Class 1 vs. 3          1.421      0.233        1
+  Class 1 vs. 4          2.406      0.121        1
+  Class 2 vs. 3          0.214      0.644        1
+  Class 2 vs. 4          0.705      0.401        1
+  Class 3 vs. 4          2.050      0.152        1
+
+FAM_6
+                          Prob       S.E.  Odds Ratio      S.E.   2.5% C.I.  97.5% C.I.
+
+  Class 1
+    Category 1           0.928      0.016      1.000      0.000      1.000      1.000
+    Category 2           0.072      0.016      1.089      0.390      0.539      2.198
+  Class 2
+    Category 1           0.923      0.023      1.000      0.000      1.000      1.000
+    Category 2           0.077      0.023      1.171      0.513      0.496      2.765
+  Class 3
+    Category 1           0.891      0.023      1.000      0.000      1.000      1.000
+    Category 2           0.109      0.023      1.705      0.689      0.772      3.765
+  Class 4
+    Category 1           0.933      0.017      1.000      0.000      1.000      1.000
+    Category 2           0.067      0.017      1.000      0.000      1.000      1.000
+
+                    Chi-Square     P-Value   Degrees of Freedom
+
+  Overall test           1.838      0.607        3
+  Class 1 vs. 2          0.035      0.851        1
+  Class 1 vs. 3          1.395      0.238        1
+  Class 1 vs. 4          0.056      0.812        1
+  Class 2 vs. 3          0.792      0.373        1
+  Class 2 vs. 4          0.127      0.722        1
+  Class 3 vs. 4          1.733      0.188        1
+
+
+
+TECHNICAL 11 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                  20
+        Number of final stage optimizations                     4
+
+
+
+     VUONG-LO-MENDELL-RUBIN LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                       -19130.131
+          2 Times the Loglikelihood Difference            331.553
+          Difference in the Number of Parameters               13
+          Mean                                              2.257
+          Standard Deviation                              116.261
+          P-Value                                          0.0023
+
+     LO-MENDELL-RUBIN ADJUSTED LRT TEST
+
+          Value                                           328.066
+          P-Value                                          0.0025
+
+
+TECHNICAL 14 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                  20
+        Number of final stage optimizations                     4
+
+     Random Starts Specification for the k-1 Class Model for Generated Data
+        Number of initial stage random starts                   0
+        Number of final stage optimizations for the
+           initial stage random starts                          0
+     Random Starts Specification for the k Class Model for Generated Data
+        Number of initial stage random starts                  40
+        Number of final stage optimizations                     8
+     Number of bootstrap draws requested                   Varies
+
+
+     PARAMETRIC BOOTSTRAPPED LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                       -19130.131
+          2 Times the Loglikelihood Difference            331.553
+          Difference in the Number of Parameters               13
+          Approximate P-Value                              0.0000
+          Successful Bootstrap Draws                            5
+
+     WARNING:  OF THE 5 BOOTSTRAP DRAWS, 4 DRAWS HAD BOTH A SMALLER LRT VALUE THAN THE
+     OBSERVED LRT VALUE AND NOT A REPLICATED BEST LOGLIKELIHOOD VALUE FOR THE 4-CLASS MODEL.
+     THIS MEANS THAT THE P-VALUE MAY NOT BE TRUSTWORTHY DUE TO LOCAL MAXIMA.
+     INCREASE THE NUMBER OF RANDOM STARTS USING THE LRTSTARTS OPTION.
+
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  15:08:24
+        Ending Time:  15:08:53
+       Elapsed Time:  00:00:29
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2020 Muthen & Muthen
