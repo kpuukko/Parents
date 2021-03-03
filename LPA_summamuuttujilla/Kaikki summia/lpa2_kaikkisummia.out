@@ -1,0 +1,438 @@
+Mplus VERSION 8.5
+MUTHEN & MUTHEN
+01/28/2021   9:52 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Katin toka LPA
+  DATA: FILE = "parent_mplus2.dat";
+  VARIABLE:
+  NAMES = ena1 ena2 ena3 ena4 ena5 res1 res2 res3 mon1 mon2 mon3 tech1 tech2
+       skill1 skill2 skill3 skill4 skill5 skill6 skill7 skill8 skill9 skill10 skill11
+       esm1 esm2 esm3 egm1 egm2 egm3 role ori1 ori2 lang1 lang2 lang3 lang4 lang5
+       lang6 lang7 lang8 Edu Curac_1 Curac_2 Curac_3 Curac_4 Curac_5 Curac_6 Curac_7
+       Curac_8 jobrole Fam_1 Fam_2 Fam_3 Fam_4 Fam_5 Fam_6 Fam_7 Fam_8 parent1 parent2
+       parent3 parent4 parent5 q6 q8 Finsitu diffic ena_c res_c mon_c tech_c rev1;
+  MISSING=.;
+
+  USEVARIABLES = ena_c res_c mon_c tech_c rev1;
+
+  CLASSES = c(2);
+
+  ANALYSIS:
+        TYPE = MIXTURE;
+        ESTIMATOR IS MLR;
+        STARTS = 100 25;
+        PROCESSORS = 4;
+  MODEL:
+
+  OUTPUT:
+
+
+
+*** WARNING in MODEL command
+  All variables are uncorrelated with all other variables within class.
+  Check that this is what is intended.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Katin toka LPA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         654
+
+Number of dependent variables                                    5
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   ENA_C       RES_C       MON_C       TECH_C      REV1
+
+Categorical latent variables
+   C
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                        100
+  Number of final stage optimizations                           25
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+
+Input data file(s)
+  parent_mplus2.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             1
+     Number of y missing data patterns           1
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+ ENA_C          1.000
+ RES_C          1.000         1.000
+ MON_C          1.000         1.000         1.000
+ TECH_C         1.000         1.000         1.000         1.000
+ REV1           1.000         1.000         1.000         1.000         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     ENA_C                 1.865      -2.142       1.000   13.46%       2.000      2.000      2.000
+             654.000       0.116       2.587       2.000   86.54%       2.000      2.000
+     RES_C                 0.572       0.917       0.000   61.77%       0.000      0.000      0.000
+             654.000       0.624      -0.788       2.000   18.96%       0.000      1.000
+     MON_C                 3.364       0.332       1.500    0.15%       3.000      3.250      3.250
+             654.000       0.343       0.348       5.000    1.53%       3.500      3.750
+     TECH_C                2.200       0.642       1.000    8.72%       1.333      2.000      2.000
+             654.000       0.642       0.493       5.000    0.92%       2.333      3.000
+     REV1                  3.109       0.176       1.000    2.14%       3.000      3.000      3.000
+             654.000       0.626       0.667       5.000    5.20%       3.000      4.000
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+
+22 perturbed starting value run(s) did not converge or were rejected in the third stage.
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+           -2913.449  830392           35
+           -2913.449  475420           71
+           -2913.449  436460           89
+           -2913.449  76974            16
+           -2913.449  422103           62
+           -2913.449  347515           24
+           -2913.449  569131           26
+           -2913.449  963053           43
+           -2913.449  637345           19
+           -2913.449  903420           5
+           -2913.449  650371           14
+           -2913.449  565819           65
+           -2913.449  76337            76
+           -3026.297  366706           29
+
+11 perturbed starting value run(s) did not converge or were rejected in the third stage.
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS      -0.484D-16.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 16, [ C#1 ]
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       16
+
+Loglikelihood
+
+          H0 Value                       -2913.449
+          H0 Scaling Correction Factor      1.1774
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    5858.899
+          Bayesian (BIC)                  5930.628
+          Sample-Size Adjusted BIC        5879.828
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        413.90610          0.63288
+       2        240.09390          0.36712
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        413.90610          0.63288
+       2        240.09390          0.36712
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              404          0.61774
+       2              250          0.38226
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.929
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2
+
+    1   1.000    0.000
+    2   0.040    0.960
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2
+
+    1   0.976    0.024
+    2   0.000    1.000
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2
+
+    1      3.708    0.000
+    2    -10.697    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    ENA_C              1.867      0.017    110.795      0.000
+    RES_C              0.024      0.010      2.301      0.021
+    MON_C              3.286      0.028    116.221      0.000
+    TECH_C             2.020      0.036     55.700      0.000
+    REV1               3.092      0.040     77.644      0.000
+
+ Variances
+    ENA_C              0.116      0.010     11.940      0.000
+    RES_C              0.106      0.008     12.761      0.000
+    MON_C              0.332      0.020     16.485      0.000
+    TECH_C             0.586      0.035     16.766      0.000
+    REV1               0.625      0.040     15.654      0.000
+
+Latent Class 2
+
+ Means
+    ENA_C              1.863      0.023     82.356      0.000
+    RES_C              1.516      0.039     39.291      0.000
+    MON_C              3.499      0.042     83.449      0.000
+    TECH_C             2.511      0.059     42.838      0.000
+    REV1               3.138      0.051     61.752      0.000
+
+ Variances
+    ENA_C              0.116      0.010     11.940      0.000
+    RES_C              0.106      0.008     12.761      0.000
+    MON_C              0.332      0.020     16.485      0.000
+    TECH_C             0.586      0.035     16.766      0.000
+    REV1               0.625      0.040     15.654      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1                0.545      0.065      8.323      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix             -0.484E-16
+       (ratio of smallest to largest eigenvalue)
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+           NU
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+                    1             2             3             4             5
+
+
+           THETA
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+ ENA_C              6
+ RES_C              0             7
+ MON_C              0             0             8
+ TECH_C             0             0             0             9
+ REV1               0             0             0             0            10
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+           NU
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+                   11            12            13            14            15
+
+
+           THETA
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+ ENA_C              6
+ RES_C              0             7
+ MON_C              0             0             8
+ TECH_C             0             0             0             9
+ REV1               0             0             0             0            10
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2
+              ________      ________
+                   16             0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+           NU
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+                1.524        -0.218         2.779         1.398         2.317
+
+
+           THETA
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+ ENA_C          0.058
+ RES_C          0.000         0.312
+ MON_C          0.000         0.000         0.171
+ TECH_C         0.000         0.000         0.000         0.321
+ REV1           0.000         0.000         0.000         0.000         0.313
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+           NU
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+                2.207         1.362         3.950         3.001         3.900
+
+
+           THETA
+              ENA_C         RES_C         MON_C         TECH_C        REV1
+              ________      ________      ________      ________      ________
+ ENA_C          0.058
+ RES_C          0.000         0.312
+ MON_C          0.000         0.000         0.171
+ TECH_C         0.000         0.000         0.000         0.321
+ REV1           0.000         0.000         0.000         0.000         0.313
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2
+              ________      ________
+                0.000         0.000
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  09:52:39
+        Ending Time:  09:52:44
+       Elapsed Time:  00:00:05
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2020 Muthen & Muthen
