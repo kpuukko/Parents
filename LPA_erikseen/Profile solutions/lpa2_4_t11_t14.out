@@ -1,0 +1,545 @@
+Mplus VERSION 8.5
+MUTHEN & MUTHEN
+02/23/2021   8:34 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Katin toka LPA
+  DATA: FILE = "parent_mplus2.dat";
+  VARIABLE:
+  NAMES = ena1 ena2 ena3 ena4 ena5 res1 res2 res3
+  mon1 mon2 mon3 tech1 tech2 rev1 skill1 skill2
+  skill3 skill4 skill5 skill6 skill7 skill8 skill9 skill10
+  skill11 esm1 esm2 esm3 egm1 egm2 egm3 role ori1 ori2
+  lang1 lang2 lang3 lang4 lang5 lang6 lang7 lang8
+  Edu Curac_1 Curac_2 Curac_3 Curac_4 Curac_5 Curac_6 Curac_7 Curac_8
+  jobrole Fam_1 Fam_2 Fam_3 Fam_4 Fam_5 Fam_6 Fam_7 Fam_8
+  parent1 parent2 parent3 parent4 parent5 q6 q8 cnumb
+  Finsitu diffic ID Duplicate_IDs toimi cclass parent bcount Eclass
+  Edum yh mh uh pclass2 mother father tech_c ena_c mon_c res_c pvol_c;
+  MISSING=.;
+
+  USEVARIABLES = ena1 ena2 ena3 ena4 res1 res2 res3 mon1 mon2 mon3 rev1 tech_c;
+
+  CLASSES = c(4);
+
+  ANALYSIS:
+        TYPE = MIXTURE;
+        ESTIMATOR IS MLR;
+        !STARTS = 100 25;
+        OPTSEED = 352277;
+        PROCESSORS = 4;
+  MODEL:
+
+  OUTPUT: TECH11 TECH14;
+
+  SAVEDATA:
+  FILE = profile_data.dat;
+  SAVE = CPROBABILITIES;
+
+
+
+*** WARNING in MODEL command
+  All variables are uncorrelated with all other variables within class.
+  Check that this is what is intended.
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  28
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Katin toka LPA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         668
+
+Number of dependent variables                                   12
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   ENA1        ENA2        ENA3        ENA4        RES1        RES2
+   RES3        MON1        MON2        MON3        REV1        TECH_C
+
+Categorical latent variables
+   C
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Random seed for analysis                                  352277
+
+Input data file(s)
+  parent_mplus2.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            12
+     Number of y missing data patterns          12
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1           0.994
+ ENA2           0.993         0.996
+ ENA3           0.991         0.994         0.994
+ ENA4           0.990         0.991         0.991         0.991
+ RES1           0.991         0.991         0.990         0.988         0.993
+ RES2           0.990         0.990         0.990         0.988         0.991
+ RES3           0.990         0.991         0.990         0.988         0.991
+ MON1           0.987         0.988         0.988         0.987         0.988
+ MON2           0.988         0.990         0.988         0.987         0.990
+ MON3           0.961         0.963         0.961         0.960         0.963
+ REV1           0.988         0.990         0.988         0.985         0.990
+ TECH_C         0.994         0.996         0.994         0.991         0.993
+
+
+           Covariance Coverage
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2           0.991
+ RES3           0.990         0.991
+ MON1           0.988         0.988         0.988
+ MON2           0.988         0.990         0.987         0.990
+ MON3           0.961         0.963         0.960         0.961         0.963
+ REV1           0.988         0.988         0.985         0.987         0.960
+ TECH_C         0.991         0.991         0.988         0.990         0.963
+
+
+           Covariance Coverage
+              REV1          TECH_C
+              ________      ________
+ REV1           0.994
+ TECH_C         0.991         0.997
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     ENA1                  3.128       0.071       1.000    2.41%       3.000      3.000      3.000
+             664.000       0.654       0.486       5.000    5.12%       3.000      4.000
+     ENA2                  3.565       0.134       2.000    3.76%       3.000      3.000      4.000
+             665.000       0.477      -0.289       5.000    7.82%       4.000      4.000
+     ENA3                  3.380      -0.079       1.000    1.36%       3.000      3.000      3.000
+             664.000       0.690       0.027       5.000    8.28%       4.000      4.000
+     ENA4                  3.465      -0.006       1.000    0.91%       3.000      3.000      3.000
+             662.000       0.784      -0.376       5.000   12.99%       4.000      4.000
+     RES1                  3.395      -0.194       1.000    3.32%       3.000      3.000      3.000
+             663.000       1.023      -0.452       5.000   14.63%       4.000      4.000
+     RES2                  3.172       0.189       1.000    3.02%       2.000      3.000      3.000
+             662.000       0.949      -0.325       5.000   11.33%       3.000      4.000
+     RES3                  3.397      -0.143       1.000    4.23%       3.000      3.000      3.000
+             662.000       1.170      -0.622       5.000   18.88%       4.000      4.000
+     MON1                  2.800       0.000       1.000   10.30%       2.000      3.000      3.000
+             660.000       0.927      -0.102       5.000    4.24%       3.000      3.000
+     MON2                  1.729       1.046       1.000   49.32%       1.000      1.000      2.000
+             661.000       0.727       0.808       5.000    0.91%       2.000      2.000
+     MON3                  2.163       0.508       1.000   32.04%       1.000      2.000      2.000
+             643.000       1.023      -0.325       5.000    2.18%       2.000      3.000
+     REV1                  1.895       1.020       1.000   31.63%       1.000      2.000      2.000
+             664.000       0.630       1.960       6.000    0.15%       2.000      2.000
+     TECH_C                3.384       0.148       1.250    0.15%       3.000      3.250      3.250
+             666.000       0.336       0.619       5.000    1.65%       3.500      3.750
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       63
+
+Loglikelihood
+
+          H0 Value                       -8988.198
+          H0 Scaling Correction Factor      1.5552
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   18102.395
+          Bayesian (BIC)                 18386.165
+          Sample-Size Adjusted BIC       18186.136
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        222.00357          0.33234
+       2         79.65066          0.11924
+       3        150.66705          0.22555
+       4        215.67872          0.32287
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        222.00357          0.33234
+       2         79.65066          0.11924
+       3        150.66705          0.22555
+       4        215.67872          0.32287
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              224          0.33533
+       2               80          0.11976
+       3              146          0.21856
+       4              218          0.32635
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.813
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.930    0.001    0.033    0.036
+    2   0.000    0.896    0.056    0.048
+    3   0.044    0.015    0.865    0.076
+    4   0.033    0.025    0.057    0.884
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3        4
+
+    1   0.938    0.000    0.029    0.033
+    2   0.003    0.900    0.028    0.069
+    3   0.050    0.030    0.838    0.083
+    4   0.037    0.018    0.051    0.894
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3        4
+
+    1      3.355  -10.397   -0.121    0.000
+    2     -3.127    2.565   -0.911    0.000
+    3     -0.507   -1.029    2.317    0.000
+    4     -3.185   -3.906   -2.859    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    ENA1               2.568      0.072     35.498      0.000
+    ENA2               3.029      0.053     56.839      0.000
+    ENA3               3.053      0.090     33.951      0.000
+    ENA4               2.855      0.086     33.227      0.000
+    RES1               2.707      0.117     23.124      0.000
+    RES2               2.504      0.086     29.143      0.000
+    RES3               2.745      0.122     22.497      0.000
+    MON1               2.081      0.121     17.251      0.000
+    MON2               1.351      0.057     23.877      0.000
+    MON3               1.525      0.095     16.012      0.000
+    REV1               1.881      0.056     33.489      0.000
+    TECH_C             2.876      0.063     45.411      0.000
+
+ Variances
+    ENA1               0.390      0.049      7.959      0.000
+    ENA2               0.267      0.019     14.187      0.000
+    ENA3               0.557      0.040     14.010      0.000
+    ENA4               0.522      0.036     14.608      0.000
+    RES1               0.548      0.043     12.894      0.000
+    RES2               0.629      0.037     17.132      0.000
+    RES3               0.652      0.048     13.641      0.000
+    MON1               0.569      0.033     17.034      0.000
+    MON2               0.573      0.036     15.847      0.000
+    MON3               0.702      0.055     12.789      0.000
+    REV1               0.623      0.049     12.763      0.000
+    TECH_C             0.127      0.012     10.335      0.000
+
+Latent Class 2
+
+ Means
+    ENA1               4.199      0.212     19.799      0.000
+    ENA2               4.465      0.290     15.412      0.000
+    ENA3               4.102      0.374     10.980      0.000
+    ENA4               4.403      0.322     13.671      0.000
+    RES1               4.268      0.151     28.176      0.000
+    RES2               4.080      0.174     23.434      0.000
+    RES3               4.089      0.163     25.152      0.000
+    MON1               3.987      0.411      9.700      0.000
+    MON2               2.651      0.368      7.202      0.000
+    MON3               3.364      0.586      5.743      0.000
+    REV1               1.985      0.114     17.388      0.000
+    TECH_C             4.291      0.291     14.730      0.000
+
+ Variances
+    ENA1               0.390      0.049      7.959      0.000
+    ENA2               0.267      0.019     14.187      0.000
+    ENA3               0.557      0.040     14.010      0.000
+    ENA4               0.522      0.036     14.608      0.000
+    RES1               0.548      0.043     12.894      0.000
+    RES2               0.629      0.037     17.132      0.000
+    RES3               0.652      0.048     13.641      0.000
+    MON1               0.569      0.033     17.034      0.000
+    MON2               0.573      0.036     15.847      0.000
+    MON3               0.702      0.055     12.789      0.000
+    REV1               0.623      0.049     12.763      0.000
+    TECH_C             0.127      0.012     10.335      0.000
+
+Latent Class 3
+
+ Means
+    ENA1               3.448      0.149     23.149      0.000
+    ENA2               3.846      0.114     33.802      0.000
+    ENA3               3.720      0.092     40.504      0.000
+    ENA4               3.851      0.128     30.186      0.000
+    RES1               2.905      0.142     20.471      0.000
+    RES2               3.021      0.146     20.649      0.000
+    RES3               2.776      0.146     18.977      0.000
+    MON1               2.910      0.126     23.074      0.000
+    MON2               1.646      0.138     11.896      0.000
+    MON3               2.446      0.148     16.577      0.000
+    REV1               2.007      0.084     24.019      0.000
+    TECH_C             3.716      0.105     35.385      0.000
+
+ Variances
+    ENA1               0.390      0.049      7.959      0.000
+    ENA2               0.267      0.019     14.187      0.000
+    ENA3               0.557      0.040     14.010      0.000
+    ENA4               0.522      0.036     14.608      0.000
+    RES1               0.548      0.043     12.894      0.000
+    RES2               0.629      0.037     17.132      0.000
+    RES3               0.652      0.048     13.641      0.000
+    MON1               0.569      0.033     17.034      0.000
+    MON2               0.573      0.036     15.847      0.000
+    MON3               0.702      0.055     12.789      0.000
+    REV1               0.623      0.049     12.763      0.000
+    TECH_C             0.127      0.012     10.335      0.000
+
+Latent Class 4
+
+ Means
+    ENA1               3.088      0.215     14.356      0.000
+    ENA2               3.587      0.167     21.536      0.000
+    ENA3               3.208      0.090     35.633      0.000
+    ENA4               3.474      0.165     21.073      0.000
+    RES1               4.126      0.172     24.029      0.000
+    RES2               3.632      0.161     22.491      0.000
+    RES3               4.245      0.127     33.463      0.000
+    MON1               3.023      0.145     20.807      0.000
+    MON2               1.837      0.116     15.789      0.000
+    MON3               2.209      0.140     15.785      0.000
+    REV1               1.797      0.059     30.670      0.000
+    TECH_C             3.339      0.152     21.979      0.000
+
+ Variances
+    ENA1               0.390      0.049      7.959      0.000
+    ENA2               0.267      0.019     14.187      0.000
+    ENA3               0.557      0.040     14.010      0.000
+    ENA4               0.522      0.036     14.608      0.000
+    RES1               0.548      0.043     12.894      0.000
+    RES2               0.629      0.037     17.132      0.000
+    RES3               0.652      0.048     13.641      0.000
+    MON1               0.569      0.033     17.034      0.000
+    MON2               0.573      0.036     15.847      0.000
+    MON3               0.702      0.055     12.789      0.000
+    REV1               0.623      0.049     12.763      0.000
+    TECH_C             0.127      0.012     10.335      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1                0.029      0.170      0.170      0.865
+    C#2               -0.996      0.811     -1.228      0.219
+    C#3               -0.359      0.210     -1.709      0.087
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.980E-06
+       (ratio of smallest to largest eigenvalue)
+
+
+TECHNICAL 11 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                  20
+        Number of final stage optimizations                     4
+
+
+
+     VUONG-LO-MENDELL-RUBIN LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                        -9122.539
+          2 Times the Loglikelihood Difference            268.684
+          Difference in the Number of Parameters               13
+          Mean                                            322.921
+          Standard Deviation                              825.772
+          P-Value                                          0.3879
+
+     LO-MENDELL-RUBIN ADJUSTED LRT TEST
+
+          Value                                           265.543
+          P-Value                                          0.3899
+
+
+TECHNICAL 14 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                  20
+        Number of final stage optimizations                     4
+
+     Random Starts Specification for the k-1 Class Model for Generated Data
+        Number of initial stage random starts                   0
+        Number of final stage optimizations for the
+           initial stage random starts                          0
+     Random Starts Specification for the k Class Model for Generated Data
+        Number of initial stage random starts                  40
+        Number of final stage optimizations                     8
+     Number of bootstrap draws requested                   Varies
+
+
+     PARAMETRIC BOOTSTRAPPED LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                        -9122.539
+          2 Times the Loglikelihood Difference            268.684
+          Difference in the Number of Parameters               13
+          Approximate P-Value                              0.0000
+          Successful Bootstrap Draws                            5
+
+     WARNING:  OF THE 5 BOOTSTRAP DRAWS, 5 DRAWS HAD BOTH A SMALLER LRT VALUE THAN THE
+     OBSERVED LRT VALUE AND NOT A REPLICATED BEST LOGLIKELIHOOD VALUE FOR THE 4-CLASS MODEL.
+     THIS MEANS THAT THE P-VALUE MAY NOT BE TRUSTWORTHY DUE TO LOCAL MAXIMA.
+     INCREASE THE NUMBER OF RANDOM STARTS USING THE LRTSTARTS OPTION.
+
+
+
+SAVEDATA INFORMATION
+
+
+  Save file
+    profile_data.dat
+
+  Order and format of variables
+
+    ENA1           F10.3
+    ENA2           F10.3
+    ENA3           F10.3
+    ENA4           F10.3
+    RES1           F10.3
+    RES2           F10.3
+    RES3           F10.3
+    MON1           F10.3
+    MON2           F10.3
+    MON3           F10.3
+    REV1           F10.3
+    TECH_C         F10.3
+    CPROB1         F10.3
+    CPROB2         F10.3
+    CPROB3         F10.3
+    CPROB4         F10.3
+    C              F10.3
+
+  Save file format
+    17F10.3
+
+  Save file record length    10000
+
+  Save missing symbol        *
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  08:34:44
+        Ending Time:  08:35:01
+       Elapsed Time:  00:00:17
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2020 Muthen & Muthen
