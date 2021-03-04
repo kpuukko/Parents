@@ -26,8 +26,8 @@ library(MASS)
 
 
 # Import data to R #
-setwd('C:/LocalData/kpuukko/Parents2021')
-fulldata <- read.spss("C:/LocalData/kpuukko/Parents2021/Parents_6ja8luokka_2020.sav", use.value.labels=FALSE, to.data.frame=TRUE)
+setwd('C:/LocalData/kpuukko/Parents')
+fulldata <- read.spss("C:/LocalData/kpuukko/Parents/Parents_6ja8luokka_2020.sav", use.value.labels=FALSE, to.data.frame=TRUE)
 
 # Check data #
 glimpse(fulldata) # 1392 observations, 221 variables in the original data
@@ -159,7 +159,7 @@ hist(d$rev1)
 #Number of children 
 d <- d %>% #jatkuva
   mutate(cnumb = as.factor(cnumb))
-d <- d %>% #kategorinen 1= 1 lapsi, 2= 2 lasta, 3= 3 tai enemm‰n
+d <- d %>% #kategorinen 1= 1 lapsi, 2= 2 lasta, 3= 3 tai enemm?n
   mutate(cclass = recode(cnumb, "1"=1, "1."=1, "2" =2, "3"=3, "4"=3, "5"=3, "6"=3, "4 lasta jotka on alle 18" =3))
 
 #Parental role 
@@ -201,9 +201,16 @@ d <- d %>%
 
 d$pclass2 <- rowSums(d[,c("yh","mh","uh")],na.rm = TRUE)
 
-#Koodattu niin, ett‰ 4 ja 5 arvon saaneet ovat blended family
+#Koodattu niin, ett? 4 ja 5 arvon saaneet ovat blended family
 d <- d %>%
   mutate(pclass2 = recode(pclass2, "1" = 1, "2" = 2, "3" = 3, "4" = 3, "5"= 3))
+
+#Ty√∂skentelee vai ei
+d <- d %>%
+  mutate(kuusi = recode(q6, "1" = 0)) %>%
+  mutate(kasi = recode(q8, "1" = 1))
+
+d$cage <- rowSums(d[,c("kuusi","kasi")],na.rm = TRUE)
 
 #Sum scores
 d$tech_c <- rowSums(d[,c("tech1","tech2")])
