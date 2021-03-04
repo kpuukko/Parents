@@ -1,6 +1,6 @@
 Mplus VERSION 8.5
 MUTHEN & MUTHEN
-03/04/2021   9:28 AM
+03/04/2021   9:37 AM
 
 INPUT INSTRUCTIONS
 
@@ -14,12 +14,12 @@ INPUT INSTRUCTIONS
        Curac_8 jobrole Fam_1 Fam_2 Fam_3 Fam_4 Fam_5 Fam_6 Fam_7 Fam_8 parent1 parent2
        parent3 parent4 parent5 q6 q8 cnumb Finsitu diffic ID Duplicate_IDs toimi
        dumrol cclass mother father mmot ffat pclass2 bcount Eclass Edum kuusi kasi
-       cage OGender P_Q1 P_Q2 adig1 adig3 adig4 adig7 adig8 adig11 adig12 adig13
-       adig14 adig16 adig17 adig18 adig19 bdig3 bdig5 bdig6 bdig8 bdig10 bdig12 bdig13
-       bdig14 bdig15 bdig16 bdig17 bdig18 bdig19 cdig1 cdig2 cdig3 cdig7 cdig8 cdig9
-       cdig10 cdig11 cdig13 cdig16 cdig17 cdig18 cdig19 conlea1 conlea2 conlea3
-       conlea4 conlea5 conlea6 negadigi1 negadigi2 negadigi3 negadigi4 negadigi5 Ofina
-       MGender oeiu;
+       cage tech_c ena_c mon_c res_c pvol_c digi_c exc_c OGender P_Q1 P_Q2 adig1 adig3
+       adig4 adig7 adig8 adig11 adig12 adig13 adig14 adig16 adig17 adig18 adig19 bdig3
+       bdig5 bdig6 bdig8 bdig10 bdig12 bdig13 bdig14 bdig15 bdig16 bdig17 bdig18
+       bdig19 cdig1 cdig2 cdig3 cdig7 cdig8 cdig9 cdig10 cdig11 cdig13 cdig16 cdig17
+       cdig18 cdig19 conlea1 conlea2 conlea3 conlea4 conlea5 conlea6 negadigi1
+       negadigi2 negadigi3 negadigi4 negadigi5 Ofina MGender oeiu;
   MISSING=.;
 
   USEVARIABLES = ena1 ena2 ena3 ena4 res1 res2 res3 mon1 mon2 mon3 rev1 tech_c;
@@ -35,9 +35,931 @@ INPUT INSTRUCTIONS
 
   OUTPUT:
 
-*** ERROR in DEFINE command
-  A new variable included on the USEVARIABLES list was not defined.
-  Check your DEFINE statements.  Undefined variable:  TECH_C
+
+
+*** WARNING in MODEL command
+  All variables are uncorrelated with all other variables within class.
+  Check that this is what is intended.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Katin toka LPA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        1394
+
+Number of dependent variables                                   12
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   ENA1        ENA2        ENA3        ENA4        RES1        RES2
+   RES3        MON1        MON2        MON3        REV1        TECH_C
+
+Categorical latent variables
+   C
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                        100
+  Number of final stage optimizations                           25
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+
+Input data file(s)
+  merged_mplus3.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            18
+     Number of y missing data patterns          18
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1           0.958
+ ENA2           0.956         0.957
+ ENA3           0.954         0.955         0.956
+ ENA4           0.953         0.953         0.953         0.954
+ RES1           0.955         0.953         0.952         0.951         0.956
+ RES2           0.954         0.953         0.953         0.952         0.954
+ RES3           0.953         0.953         0.953         0.952         0.953
+ MON1           0.952         0.951         0.952         0.951         0.952
+ MON2           0.953         0.952         0.952         0.951         0.953
+ MON3           0.925         0.925         0.925         0.924         0.925
+ REV1           0.954         0.953         0.952         0.951         0.954
+ TECH_C         0.958         0.957         0.956         0.954         0.956
+
+
+           Covariance Coverage
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2           0.955
+ RES3           0.953         0.954
+ MON1           0.953         0.953         0.953
+ MON2           0.953         0.953         0.952         0.953
+ MON3           0.925         0.926         0.925         0.925         0.926
+ REV1           0.953         0.953         0.951         0.952         0.925
+ TECH_C         0.955         0.954         0.953         0.953         0.926
+
+
+           Covariance Coverage
+              REV1          TECH_C
+              ________      ________
+ REV1           0.957
+ TECH_C         0.957         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     ENA1                  3.111       0.100       1.000    2.25%       3.000      3.000      3.000
+            1335.000       0.636       0.516       5.000    4.79%       3.000      4.000
+     ENA2                  3.517       0.145       1.000    0.15%       3.000      3.000      3.000
+            1334.000       0.496      -0.114       5.000    7.50%       4.000      4.000
+     ENA3                  3.361       0.046       1.000    0.83%       3.000      3.000      3.000
+            1332.000       0.642      -0.022       5.000    7.58%       4.000      4.000
+     ENA4                  3.456      -0.016       1.000    1.13%       3.000      3.000      3.000
+            1330.000       0.803      -0.349       5.000   13.23%       4.000      4.000
+     RES1                  3.395      -0.180       1.000    3.08%       3.000      3.000      3.000
+            1332.000       1.024      -0.504       5.000   14.64%       4.000      4.000
+     RES2                  3.131       0.134       1.000    3.98%       2.000      3.000      3.000
+            1331.000       0.957      -0.257       5.000   10.22%       3.000      4.000
+     RES3                  3.387      -0.158       1.000    4.44%       2.000      3.000      3.000
+            1330.000       1.191      -0.653       5.000   18.57%       4.000      4.000
+     MON1                  2.751       0.057       1.000   11.30%       2.000      3.000      3.000
+            1328.000       0.958      -0.206       5.000    4.14%       3.000      3.000
+     MON2                  1.691       1.159       1.000   52.45%       1.000      1.000      1.000
+            1329.000       0.736       1.062       5.000    0.98%       2.000      2.000
+     MON3                  2.102       0.548       1.000   34.86%       1.000      2.000      2.000
+            1291.000       1.007      -0.359       5.000    1.78%       2.000      3.000
+     REV1                  1.876       0.896       1.000   32.16%       1.000      2.000      2.000
+            1334.000       0.593       1.426       6.000    0.07%       2.000      2.000
+     TECH_C                1.537      -1.272       0.000   23.17%       0.000      2.000      2.000
+            1394.000       0.712      -0.383       2.000   76.83%       2.000      2.000
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+
+6 perturbed starting value run(s) did not converge or were rejected in the third stage.
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+          -19072.100  569833           85
+          -19072.100  284109           82
+          -19072.100  851945           18
+          -19072.100  848163           47
+          -19072.100  749453           33
+          -19072.100  804561           59
+          -19072.100  637345           19
+          -19072.100  915107           54
+          -19072.100  467339           66
+          -19072.100  915642           40
+          -19072.100  285380           1
+          -19072.100  207896           25
+          -19072.100  783110           72
+          -19072.100  268217           83
+          -19072.100  246261           38
+          -19072.100  782200           84
+          -19072.100  784664           75
+          -19072.100  432148           30
+          -19072.100  696773           80
+          -19072.100  76974            16
+
+5 perturbed starting value run(s) did not converge or were rejected in the third stage.
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS       0.204D-14.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 63, [ C#3 ]
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       63
+
+Loglikelihood
+
+          H0 Value                      -19072.100
+          H0 Scaling Correction Factor      1.2091
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   38270.200
+          Bayesian (BIC)                 38600.316
+          Sample-Size Adjusted BIC       38400.189
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        389.26544          0.27924
+       2        394.37869          0.28291
+       3        394.06192          0.28268
+       4        216.29395          0.15516
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        389.26544          0.27924
+       2        394.37869          0.28291
+       3        394.06192          0.28268
+       4        216.29395          0.15516
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              376          0.26973
+       2              391          0.28049
+       3              424          0.30416
+       4              203          0.14562
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.752
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.917    0.024    0.059    0.000
+    2   0.023    0.865    0.074    0.038
+    3   0.083    0.092    0.780    0.045
+    4   0.000    0.041    0.060    0.899
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3        4
+
+    1   0.886    0.023    0.091    0.000
+    2   0.023    0.858    0.099    0.021
+    3   0.056    0.073    0.840    0.031
+    4   0.000    0.068    0.087    0.844
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3        4
+
+    1      9.932    6.292    7.655    0.000
+    2      0.089    3.716    1.552    0.000
+    3      0.601    0.864    3.304    0.000
+    4    -13.646   -2.512   -2.269    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    ENA1               2.613      0.048     54.388      0.000
+    ENA2               3.050      0.038     79.515      0.000
+    ENA3               3.137      0.048     64.826      0.000
+    ENA4               2.956      0.052     56.557      0.000
+    RES1               2.439      0.062     39.170      0.000
+    RES2               2.341      0.053     43.821      0.000
+    RES3               2.417      0.064     38.057      0.000
+    MON1               1.912      0.066     29.076      0.000
+    MON2               1.171      0.025     47.725      0.000
+    MON3               1.395      0.055     25.546      0.000
+    REV1               1.814      0.042     43.029      0.000
+    TECH_C             1.608      0.046     34.839      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.291      0.000
+    ENA2               0.333      0.015     22.397      0.000
+    ENA3               0.569      0.024     24.014      0.000
+    ENA4               0.630      0.026     23.825      0.000
+    RES1               0.432      0.029     15.003      0.000
+    RES2               0.621      0.025     24.763      0.000
+    RES3               0.546      0.027     20.304      0.000
+    MON1               0.547      0.024     22.736      0.000
+    MON2               0.515      0.029     17.657      0.000
+    MON3               0.602      0.045     13.487      0.000
+    REV1               0.587      0.030     19.842      0.000
+    TECH_C             0.698      0.024     28.595      0.000
+
+Latent Class 2
+
+ Means
+    ENA1               2.997      0.057     52.140      0.000
+    ENA2               3.437      0.053     65.302      0.000
+    ENA3               3.162      0.047     67.568      0.000
+    ENA4               3.356      0.064     52.556      0.000
+    RES1               4.149      0.057     72.540      0.000
+    RES2               3.479      0.074     46.701      0.000
+    RES3               4.288      0.061     70.492      0.000
+    MON1               2.671      0.070     38.158      0.000
+    MON2               1.526      0.059     25.665      0.000
+    MON3               1.784      0.080     22.230      0.000
+    REV1               1.798      0.043     41.564      0.000
+    TECH_C             1.671      0.044     37.969      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.291      0.000
+    ENA2               0.333      0.015     22.397      0.000
+    ENA3               0.569      0.024     24.014      0.000
+    ENA4               0.630      0.026     23.825      0.000
+    RES1               0.432      0.029     15.003      0.000
+    RES2               0.621      0.025     24.763      0.000
+    RES3               0.546      0.027     20.304      0.000
+    MON1               0.547      0.024     22.736      0.000
+    MON2               0.515      0.029     17.657      0.000
+    MON3               0.602      0.045     13.487      0.000
+    REV1               0.587      0.030     19.842      0.000
+    TECH_C             0.698      0.024     28.595      0.000
+
+Latent Class 3
+
+ Means
+    ENA1               3.208      0.053     60.933      0.000
+    ENA2               3.636      0.053     68.217      0.000
+    ENA3               3.508      0.050     70.804      0.000
+    ENA4               3.638      0.061     59.719      0.000
+    RES1               3.057      0.071     42.855      0.000
+    RES2               3.079      0.068     45.133      0.000
+    RES3               2.991      0.081     36.946      0.000
+    MON1               3.087      0.061     50.264      0.000
+    MON2               1.890      0.080     23.677      0.000
+    MON3               2.579      0.083     30.889      0.000
+    REV1               1.978      0.050     39.444      0.000
+    TECH_C             1.401      0.065     21.651      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.291      0.000
+    ENA2               0.333      0.015     22.397      0.000
+    ENA3               0.569      0.024     24.014      0.000
+    ENA4               0.630      0.026     23.825      0.000
+    RES1               0.432      0.029     15.003      0.000
+    RES2               0.621      0.025     24.763      0.000
+    RES3               0.546      0.027     20.304      0.000
+    MON1               0.547      0.024     22.736      0.000
+    MON2               0.515      0.029     17.657      0.000
+    MON3               0.602      0.045     13.487      0.000
+    REV1               0.587      0.030     19.842      0.000
+    TECH_C             0.698      0.024     28.595      0.000
+
+Latent Class 4
+
+ Means
+    ENA1               4.061      0.076     53.375      0.000
+    ENA2               4.308      0.066     65.205      0.000
+    ENA3               3.880      0.085     45.534      0.000
+    ENA4               4.227      0.073     58.000      0.000
+    RES1               4.355      0.088     49.372      0.000
+    RES2               4.034      0.076     53.152      0.000
+    RES3               4.211      0.091     46.095      0.000
+    MON1               3.833      0.093     41.055      0.000
+    MON2               2.596      0.121     21.496      0.000
+    MON3               3.177      0.134     23.667      0.000
+    REV1               1.946      0.066     29.574      0.000
+    TECH_C             1.411      0.085     16.683      0.000
+
+ Variances
+    ENA1               0.422      0.023     18.291      0.000
+    ENA2               0.333      0.015     22.397      0.000
+    ENA3               0.569      0.024     24.014      0.000
+    ENA4               0.630      0.026     23.825      0.000
+    RES1               0.432      0.029     15.003      0.000
+    RES2               0.621      0.025     24.763      0.000
+    RES3               0.546      0.027     20.304      0.000
+    MON1               0.547      0.024     22.736      0.000
+    MON2               0.515      0.029     17.657      0.000
+    MON3               0.602      0.045     13.487      0.000
+    REV1               0.587      0.030     19.842      0.000
+    TECH_C             0.698      0.024     28.595      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1                0.588      0.193      3.042      0.002
+    C#2                0.601      0.171      3.507      0.000
+    C#3                0.600      0.158      3.792      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.204E-14
+       (ratio of smallest to largest eigenvalue)
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                    1             2             3             4             5
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                    6             7             8             9            10
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                   11            12
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1              13
+ ENA2               0            14
+ ENA3               0             0            15
+ ENA4               0             0             0            16
+ RES1               0             0             0             0            17
+ RES2               0             0             0             0             0
+ RES3               0             0             0             0             0
+ MON1               0             0             0             0             0
+ MON2               0             0             0             0             0
+ MON3               0             0             0             0             0
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2              18
+ RES3               0            19
+ MON1               0             0            20
+ MON2               0             0             0            21
+ MON3               0             0             0             0            22
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1              23
+ TECH_C             0            24
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                   25            26            27            28            29
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                   30            31            32            33            34
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                   35            36
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1              13
+ ENA2               0            14
+ ENA3               0             0            15
+ ENA4               0             0             0            16
+ RES1               0             0             0             0            17
+ RES2               0             0             0             0             0
+ RES3               0             0             0             0             0
+ MON1               0             0             0             0             0
+ MON2               0             0             0             0             0
+ MON3               0             0             0             0             0
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2              18
+ RES3               0            19
+ MON1               0             0            20
+ MON2               0             0             0            21
+ MON3               0             0             0             0            22
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1              23
+ TECH_C             0            24
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 3
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                   37            38            39            40            41
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                   42            43            44            45            46
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                   47            48
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1              13
+ ENA2               0            14
+ ENA3               0             0            15
+ ENA4               0             0             0            16
+ RES1               0             0             0             0            17
+ RES2               0             0             0             0             0
+ RES3               0             0             0             0             0
+ MON1               0             0             0             0             0
+ MON2               0             0             0             0             0
+ MON3               0             0             0             0             0
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2              18
+ RES3               0            19
+ MON1               0             0            20
+ MON2               0             0             0            21
+ MON3               0             0             0             0            22
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1              23
+ TECH_C             0            24
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 4
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                   49            50            51            52            53
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                   54            55            56            57            58
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                   59            60
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1              13
+ ENA2               0            14
+ ENA3               0             0            15
+ ENA4               0             0             0            16
+ RES1               0             0             0             0            17
+ RES2               0             0             0             0             0
+ RES3               0             0             0             0             0
+ MON1               0             0             0             0             0
+ MON2               0             0             0             0             0
+ MON3               0             0             0             0             0
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2              18
+ RES3               0            19
+ MON1               0             0            20
+ MON2               0             0             0            21
+ MON3               0             0             0             0            22
+ REV1               0             0             0             0             0
+ TECH_C             0             0             0             0             0
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1              23
+ TECH_C             0            24
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+                   61            62            63             0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                2.313         2.813         2.560         2.560         2.383
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                2.153         2.296         1.772         0.834         1.099
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                1.105         0.693
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1           0.318
+ ENA2           0.000         0.248
+ ENA3           0.000         0.000         0.321
+ ENA4           0.000         0.000         0.000         0.401
+ RES1           0.000         0.000         0.000         0.000         0.512
+ RES2           0.000         0.000         0.000         0.000         0.000
+ RES3           0.000         0.000         0.000         0.000         0.000
+ MON1           0.000         0.000         0.000         0.000         0.000
+ MON2           0.000         0.000         0.000         0.000         0.000
+ MON3           0.000         0.000         0.000         0.000         0.000
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2           0.479
+ RES3           0.000         0.595
+ MON1           0.000         0.000         0.479
+ MON2           0.000         0.000         0.000         0.368
+ MON3           0.000         0.000         0.000         0.000         0.504
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1           0.297
+ TECH_C         0.000         0.356
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                3.111         3.517         3.361         3.456         3.395
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                3.131         3.387         2.751         1.691         2.102
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                1.876         1.537
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1           0.318
+ ENA2           0.000         0.248
+ ENA3           0.000         0.000         0.321
+ ENA4           0.000         0.000         0.000         0.401
+ RES1           0.000         0.000         0.000         0.000         0.512
+ RES2           0.000         0.000         0.000         0.000         0.000
+ RES3           0.000         0.000         0.000         0.000         0.000
+ MON1           0.000         0.000         0.000         0.000         0.000
+ MON2           0.000         0.000         0.000         0.000         0.000
+ MON3           0.000         0.000         0.000         0.000         0.000
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2           0.479
+ RES3           0.000         0.595
+ MON1           0.000         0.000         0.479
+ MON2           0.000         0.000         0.000         0.368
+ MON3           0.000         0.000         0.000         0.000         0.504
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1           0.297
+ TECH_C         0.000         0.356
+
+
+     STARTING VALUES FOR LATENT CLASS 3
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                3.111         3.517         3.361         3.456         3.395
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                3.131         3.387         2.751         1.691         2.102
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                1.876         1.537
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1           0.318
+ ENA2           0.000         0.248
+ ENA3           0.000         0.000         0.321
+ ENA4           0.000         0.000         0.000         0.401
+ RES1           0.000         0.000         0.000         0.000         0.512
+ RES2           0.000         0.000         0.000         0.000         0.000
+ RES3           0.000         0.000         0.000         0.000         0.000
+ MON1           0.000         0.000         0.000         0.000         0.000
+ MON2           0.000         0.000         0.000         0.000         0.000
+ MON3           0.000         0.000         0.000         0.000         0.000
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2           0.479
+ RES3           0.000         0.595
+ MON1           0.000         0.000         0.479
+ MON2           0.000         0.000         0.000         0.368
+ MON3           0.000         0.000         0.000         0.000         0.504
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1           0.297
+ TECH_C         0.000         0.356
+
+
+     STARTING VALUES FOR LATENT CLASS 4
+
+
+           NU
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+                3.909         4.221         4.162         4.352         4.407
+
+
+           NU
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+                4.110         4.478         3.730         2.549         3.106
+
+
+           NU
+              REV1          TECH_C
+              ________      ________
+                2.646         2.380
+
+
+           THETA
+              ENA1          ENA2          ENA3          ENA4          RES1
+              ________      ________      ________      ________      ________
+ ENA1           0.318
+ ENA2           0.000         0.248
+ ENA3           0.000         0.000         0.321
+ ENA4           0.000         0.000         0.000         0.401
+ RES1           0.000         0.000         0.000         0.000         0.512
+ RES2           0.000         0.000         0.000         0.000         0.000
+ RES3           0.000         0.000         0.000         0.000         0.000
+ MON1           0.000         0.000         0.000         0.000         0.000
+ MON2           0.000         0.000         0.000         0.000         0.000
+ MON3           0.000         0.000         0.000         0.000         0.000
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              RES2          RES3          MON1          MON2          MON3
+              ________      ________      ________      ________      ________
+ RES2           0.479
+ RES3           0.000         0.595
+ MON1           0.000         0.000         0.479
+ MON2           0.000         0.000         0.000         0.368
+ MON3           0.000         0.000         0.000         0.000         0.504
+ REV1           0.000         0.000         0.000         0.000         0.000
+ TECH_C         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              REV1          TECH_C
+              ________      ________
+ REV1           0.297
+ TECH_C         0.000         0.356
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  09:37:36
+        Ending Time:  09:37:47
+       Elapsed Time:  00:00:11
+
 
 
 MUTHEN & MUTHEN
